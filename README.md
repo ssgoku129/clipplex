@@ -2,9 +2,11 @@
 
 # Clipplex
 
+A friend of mine stumbled across this project and asked if I could make it compatible for his Windows Plex server which has a single hard drive attached with all their media so I added some simple commands to translate the Windows Path to linux, simply using WinNFSd[https://github.com/winnfsd/winnfsd] and version 3 while mounting, you can share your external plex server and drive with your clipplex from a Windows desktop OS over NFS
+
 Have you ever, while watching something on your plex server, wanted to easily extract a clip out of a good movie or tv show you're watching to share it with your friend, family or the world? While this was always possible, the process can be complex for something "so simple".
 
-![](https://github.com/jo-nike/clipplex/blob/master/example.gif)
+![](https://github.com/ssgoku129/clipplex/blob/master/example.gif)
 
 ## Description
 
@@ -16,7 +18,7 @@ An in-depth paragraph about your project and overview of use.
 | ---------------------|:----------------:| ----------|
 | PUID                 | 1000             | Optional  |
 | GUID                 | 1000             | Optional  |
-| TZ                   | America/New_York | Optional  |
+| TZ                   | America/Toronto  | Optional  |
 | PLEX_URL             | link to plex     | Mandatory |
 | PLEX_TOKEN           | token for plex   | Mandatory |
 | STREAMABLE_LOGIN     | ...              | Optional  |
@@ -28,7 +30,9 @@ Volumes: You will need to mount two locations:
 * one that point to your media, in the exact same fashion your plex access these media (as the path are absolutes) 
 * one where the new clips will be created.
 
-media need to be mounted into the container path: /media
+media need to be mounted into the container path: /media when using Linux
+
+media needs to be mounted exactly how the Windows path is, i.e. L:\TV Shows = /l/tvshows
 
 clips need to be mounted into the container path: /app/app/static/media (yes, I'll get that better eventually).
 
@@ -37,7 +41,7 @@ Port: Port 5000 is used to serve the frontend. (yes I will serve flask with guni
 Network: Need to be on the same network as your plex instance.
 
 ```
-docker run -d --name clipplex -p 9945:5000 -v /media:/media -v /volumes/clipplex:/app/app/static/media --restart always -e PUID=1000 -e PGID=1000 -e TZ=America/New_York -e PLEX_URL=YOURPLEXURL -e PLEX_TOKEN=YOURPLEXTOKEN jonnike/clipplex:latest
+docker run -d --name clipplex -p 9945:5000 -v /media:/media -v /volumes/clipplex:/app/app/static/media --restart always -e PUID=1000 -e PGID=1000 -e TZ=America/Toronto -e PLEX_URL=YOURPLEXURL -e PLEX_TOKEN=YOURPLEXTOKEN jonnike/clipplex:latest
 ```
 
 ## Docker Compose Example
@@ -69,11 +73,16 @@ networks:
 
 ## Authors
 
-Contributors names and contact info
+ssgoku129 - expanded for use with Windows
 
-Jo Nike
+Jo Nike - Original contributor
 
 ## Version History
+* 0.0.9
+    Made the path conversion deal with special characters a little better
+
+* 0.0.8
+    Added Path conversions for Windows Servers
 
 * 0.0.3
     
@@ -82,9 +91,3 @@ Jo Nike
 ## License
 
 Distributed under the MIT License. See the LICENSE file information.
-
-## Acknowledgments
-
-* Thanks to the resident of flavourtown for allowing me to pitch my ideas and share my progress with them.
-
-* Thanks to [Start Bootstrap](https://github.com/startbootstrap/startbootstrap-sb-admin) for the UI.
