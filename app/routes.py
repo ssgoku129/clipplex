@@ -83,6 +83,12 @@ def signin():
     token = request.get_json()['token']
     valid_login, user_details, user_group = check_credentials(token=token)
     print(valid_login, user_details, user_group)
+    
+@app.route("/get-plex-users", methods=["GET"])
+def get_plex_users():
+    plex_info = clipplexAPI.PlexInfo()  # Assuming PlexInfo can work without a username
+    users = plex_info.get_all_users()
+    return jsonify(users)
 
 def check_credentials(token=None):
     """Verifies credentials for username and password.
