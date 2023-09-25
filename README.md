@@ -56,6 +56,15 @@ Network: Need to be on the same network as your plex instance.
 docker run -d --name clipplex -p 9945:5000 -v /media:/media -v /volumes/clipplex:/app/app/static/media --restart always -e PUID=1000 -e PGID=1000 -e TZ=America/Toronto -e PLEX_URL=YOURPLEXURL -e PLEX_TOKEN=YOURPLEXTOKEN jonnike/clipplex:latest
 ```
 
+For Example, before translation:
+
+'L:\TV Shows\Its Always Sunny In Philadelphia\Season 9\It's Always Sunny in Philadelphia - 09x03 - The Gang Tries Desperately to Win an Award [HD TV].mkv'
+
+After translation:
+
+'/l/TV Shows/Its Always Sunny In Philadelphia/Season 9/It's Always Sunny in Philadelphia - 09x03 - The Gang Tries Desperately to Win an Award [HD TV].mkv'
+
+
 ## Docker Compose Example
 ```
 version: "3.5"
