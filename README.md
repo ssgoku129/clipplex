@@ -44,7 +44,7 @@ Volumes: You will need to mount two locations:
 
 media need to be mounted into the container path: /media when using Linux
 
-media needs to be mounted exactly how the Windows path is, i.e. L:\TV Shows = /l/tvshows
+media needs to be mounted exactly how the Windows path is, i.e. 'L:\TV Shows' = '/l/TV\ Shows'
 
 clips need to be mounted into the container path: /app/app/static/media (yes, I'll get that better eventually).
 
