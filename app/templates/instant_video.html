@@ -9,8 +9,8 @@
 
   <form action="" method="post" target="dataframe" novalidate>
     {{ form.csrf_token }}
-    <p>
-      {{ form.user.label }} {{ form.user(id="username_input", size=15) }} <i id='check_current_stream' class='fas fa-eye' onclick='check_stream();'></i><br>
+   <p>
+      {{ form.user.label }} <select id="usernameDropdown"></select> <i id='check_current_stream' class='fas fa-eye' onclick='check_stream();'></i><br>
       <table>
         <tr>
           <td>
@@ -152,6 +152,18 @@
 
 
 <div class="clearfix"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Function to populate the dropdown with Plex users
+    $(document).ready(function() {
+        $.get('/get-plex-users', function(data) {
+            var dropdown = $('#usernameDropdown');
+            data.forEach(function(user) {
+                dropdown.append($('<option></option>').val(user).text(user));
+            });
+        });
+    });
 
 <script>
   function viewDetails(id){
