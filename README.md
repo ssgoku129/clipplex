@@ -12,8 +12,17 @@ Have you ever, while watching something on your plex server, wanted to easily ex
 
 In this fork, I simply added a translator for the Windows paths so they are compatible with Linux, using a combination of WinNFSd and
 
-Using a simple batch script on startup called nfs_share.bat for example:
-```.\WinNFSd.exe "L:/TV Shows" /l/tv```
+Using a simple batch script on startup called nfs_share.bat for example, containing the following:
+
+```.\WinNFSd.exe "L:/" /l```
+
+This will share the external drive L: as an NFS path [WIN_PLEX_IP]:/l/
+
+Then I simply add the following config to the docker script:
+
+ ``` -v /WIN_PLEX_IP/:/l \```
+
+And now we have the path mounted perfctly for clipplex to translate, enjoy clipping on your Windows servers!
 
 ## Docker variables
 
