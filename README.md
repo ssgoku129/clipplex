@@ -90,6 +90,9 @@ ssgoku129 - expanded for use with Windows
 Jo Nike - Original contributor
 
 ## Version History
+* 0.1.0
+    added drop-down for user list and auto-select on pick + import start time to current time
+
 * 0.0.9
     Made the path conversion deal with special characters a little better
 
