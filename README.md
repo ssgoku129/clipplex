@@ -2,13 +2,13 @@
 
 # Clipplex
 
-A friend of mine stumbled across this [project](https://github.com/jo-nike/clipplex) and asked if I could make it compatible for his Windows Plex server which has a single hard drive attached with all their media so I added some simple commands to translate the Windows Path to linux, simply using [WinNFSd](https://github.com/winnfsd/winnfsd) and version 3 while mounting, you can share your external plex server and drive with your clipplex from a Windows desktop OS over NFS
+A friend of mine stumbled across this [project](https://github.com/jo-nike/clipplex) and asked if I could make it compatible for his Windows Plex server which has a single hard drive attached with all their media so I added some simple commands to translate the Windows Path to linux, accompany this conmtainerized tool with [WinNFSd](https://github.com/winnfsd/winnfsd) and version 3 while mounting, you can share your external plex server and drive with your clipplex from a Windows desktop OS over NFS!
+
+## Description
 
 Have you ever, while watching something on your plex server, wanted to easily extract a clip out of a good movie or tv show you're watching to share it with your friend, family or the world? While this was always possible, the process can be complex for something "so simple".
 
 ![](https://github.com/ssgoku129/clipplex/blob/master/example.gif)
-
-## Description
 
 In this fork, I simply added a translator for the Windows paths so they are compatible with Linux, using a combination of WinNFSd and
 
