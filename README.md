@@ -1,3 +1,5 @@
+> #### **_I don't know if this needs to be said or not but Please do not use this tool with public access, I did not create this but I would not trust this with access to my Plex Media Server exposed to the internet, YOU HAVE BEEN WARNED!_**
+
 # Clipplex
 
 Have you ever, while watching something on your plex server, wanted to easily extract a clip out of a good movie or tv show you're watching to share it with your friend, family or the world? While this was always possible, the process can be complex for something "so simple".
