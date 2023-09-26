@@ -10,9 +10,7 @@ Have you ever, while watching something on your plex server, wanted to easily ex
 
 ![](https://github.com/ssgoku129/clipplex/blob/master/example.gif)
 
-In this fork, I simply added a translator for the Windows paths so they are compatible with Linux, using a combination of WinNFSd and
-
-Using a simple batch script on startup called nfs_share.bat for example, containing the following:
+In this fork, I simply added a translator for the Windows paths so they are compatible with Linux, using a combination of WinNFSd and a simple batch script on startup called nfs_share.bat for example, containing the following:
 
 ```.\WinNFSd.exe "L:/" /l```
 
