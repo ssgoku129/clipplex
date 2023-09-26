@@ -2,7 +2,7 @@
 
 # Clipplex
 
-A friend of mine stumbled across this [project](https://github.com/jo-nike/clipplex) and asked if I could make it compatible for his Windows Plex server which has a single hard drive attached with all their media so I added some simple commands to translate the Windows Path to linux, accompany this conmtainerized tool with [WinNFSd](https://github.com/winnfsd/winnfsd) and version 3 while mounting, you can share your external plex server and drive with your clipplex from a Windows desktop OS over NFS!
+A friend of mine stumbled across this [project](https://github.com/jo-nike/clipplex) and asked if I could make it compatible for his Windows Plex server which has a single hard drive attached with all their media so I added some simple code to translate the Windows Path to linux, you can accompany this containerized tool with [WinNFSd](https://github.com/winnfsd/winnfsd) on a Windows host utilizing nfs-version 3 while mounting on your container orchastration platform which in turn shares your media with your clipplex from a Windows desktop OS over NFS! This also likely can be paired with Docker for Windows to act as the Plex Server/storage/clipplex all-in-one but I have not attempted it.
 
 ## Description
 
